@@ -7,96 +7,89 @@
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #0d0d0d;
-      color: #f2f2f2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
     }
 
     header {
-      padding: 2rem;
-      background: linear-gradient(90deg, #8e2de2, #4a00e0);
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      padding: 2rem;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 1px;
-      color: #fff;
+      font-size: 2.5rem;
     }
 
     header p {
-      margin-top: 8px;
-      color: #ddd;
+      margin-top: .5rem;
       font-size: 1.2rem;
+      opacity: .9;
     }
 
     .games-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
       padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
     }
 
     .game-card {
       background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-align: center;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
 
     .game-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.7);
     }
 
     .game-card img {
-      width: 200px;
-      height: 200px;
-      border-radius: 12px;
+      width: 100%;
+      height: 160px;
       object-fit: cover;
-      margin-bottom: 1rem;
     }
 
     .game-card h2 {
-      margin: 0.5rem 0;
-      font-size: 1.5rem;
-      color: #ffcc00;
+      margin: .8rem;
+      font-size: 1.2rem;
     }
 
     .game-card p {
-      margin: 0.5rem 0;
-      color: #bbb;
+      margin: 0 .8rem 1rem;
+      font-size: .9rem;
+      color: #aaa;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 10px;
+      display: block;
+      margin: 0 1rem 1rem;
+      padding: .6rem;
+      text-align: center;
+      background: #2575fc;
+      color: white;
+      border-radius: 8px;
       text-decoration: none;
-      color: #fff;
-      background: linear-gradient(90deg, #ff512f, #dd2476);
       font-weight: bold;
-      transition: opacity 0.3s;
+      transition: background .2s;
     }
 
     .btn:hover {
-      opacity: 0.85;
+      background: #1b5ed9;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background: #111;
-      color: #777;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      font-size: .9rem;
+      color: #888;
     }
   </style>
 </head>
@@ -106,40 +99,34 @@
     <p>Discover & Launch Roblox Games Instantly</p>
   </header>
 
-  <div class="games-container" id="games"></div>
+  <main class="games-container">
+    <!-- Game 1 -->
+    <div class="game-card">
+      <img src="https://tr.rbxcdn.com/0b9d0403a0b3cda1b91aebc5afc82076/512/512/Image/Png" alt="Brookhaven">
+      <h2>Brookhaven 🏡RP</h2>
+      <p>Roleplay, explore, and build your dream life.</p>
+      <a class="btn" target="_blank" href="https://www.roblox.com/games/4924922222/">▶ Play Now</a>
+    </div>
+
+    <!-- Game 2 -->
+    <div class="game-card">
+      <img src="https://tr.rbxcdn.com/25c1d6f8c928fd31c66f4f4a9c8e7dfd/512/512/Image/Png" alt="Adopt Me">
+      <h2>Adopt Me!</h2>
+      <p>Adopt pets, build your home, and roleplay with friends.</p>
+      <a class="btn" target="_blank" href="https://www.roblox.com/games/920587237/">▶ Play Now</a>
+    </div>
+
+    <!-- Game 3 -->
+    <div class="game-card">
+      <img src="https://tr.rbxcdn.com/8a0ebc61d8d62cc92496078f4b60ad08/512/512/Image/Png" alt="Blox Fruits">
+      <h2>Blox Fruits 🍎⚔️</h2>
+      <p>Become a pirate or marine. Train, fight, and explore the seas.</p>
+      <a class="btn" target="_blank" href="https://www.roblox.com/games/2753915549/">▶ Play Now</a>
+    </div>
+  </main>
 
   <footer>
     © 2025 IndexHub — Your Roblox Game Hub
   </footer>
-
-  <script>
-    // Replace with your universe IDs
-    const universeIds = [126884695634066, 79546208627805, 109983668079237]; 
-
-    async function loadGames() {
-      const res = await fetch(`https://games.roblox.com/v1/games?universeIds=${universeIds.join(",")}`);
-      const data = await res.json();
-
-      for (let game of data.data) {
-        // get thumbnail
-        const thumbRes = await fetch(`https://thumbnails.roblox.com/v1/games/icons?universeIds=${game.id}&size=256x256&format=Png`);
-        const thumbData = await thumbRes.json();
-        const thumb = thumbData.data[0]?.imageUrl;
-
-        // create game card
-        const gameDiv = document.createElement("div");
-        gameDiv.className = "game-card";
-        gameDiv.innerHTML = `
-          <img src="${thumb}" alt="${game.name}">
-          <h2>${game.name}</h2>
-          <p>👍 ${game.likesPercentage}% | 👥 ${game.playing} playing</p>
-          <a class="btn" target="_blank" href="https://www.roblox.com/games/${game.rootPlaceId}">▶ Play Now</a>
-        `;
-        document.getElementById("games").appendChild(gameDiv);
-      }
-    }
-
-    loadGames();
-  </script>
 </body>
 </html>
