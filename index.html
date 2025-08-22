@@ -45,14 +45,15 @@
 
     .content {
       padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
     .card {
       background: #1a1a1a;
       padding: 2rem;
-      margin: 1rem auto;
       border-radius: 15px;
-      max-width: 700px;
       box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
       transition: transform 0.2s ease;
     }
@@ -74,7 +75,7 @@
     }
 
     .btn:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     footer {
@@ -90,36 +91,42 @@
   <header>
     <h1>IndexHub</h1>
     <nav>
-      <a href="#">Scripts</a>
-      <a href="#">Executors</a>
-      <a href="#">Tools</a>
+      <a href="#">Games</a>
+      <a href="#">Updates</a>
       <a href="#">Community</a>
+      <a href="#">About</a>
     </nav>
   </header>
 
   <div class="content">
     <div class="card">
-      <h2>🔥 Featured Script</h2>
-      <p>Check out the latest Roblox script added to IndexHub.  
-      Plug it in, test it out, and share your feedback.</p>
-      <a href="#" class="btn">Get Script</a>
+      <h2>🎮 Featured Game</h2>
+      <p>Play the hottest game in IndexHub right now!  
+      Click below to launch instantly.</p>
+      <a href="#" class="btn">Play Now</a>
     </div>
 
     <div class="card">
-      <h2>⚡ Popular Tools</h2>
-      <p>Explore the most used Roblox executors and custom mods from the hub.</p>
-      <a href="#" class="btn">Browse Tools</a>
+      <h2>🔥 Popular Games</h2>
+      <p>Check out what everyone’s playing this week from the hub’s library.</p>
+      <a href="#" class="btn">Browse Games</a>
+    </div>
+
+    <div class="card">
+      <h2>📰 Latest Updates</h2>
+      <p>Stay up to date with new releases, patch notes, and events in IndexHub.</p>
+      <a href="#" class="btn">View Updates</a>
     </div>
 
     <div class="card">
       <h2>💬 Join the Community</h2>
-      <p>Chat, share, and collab with other Roblox scripters & modders.</p>
+      <p>Chat, share, and connect with other gamers in the IndexHub community.</p>
       <a href="#" class="btn">Join Now</a>
     </div>
   </div>
 
   <footer>
-    © 2025 IndexHub — The Roblox Script & Modding Hub
+    © 2025 IndexHub — Your Game Hub for Fun & Play
   </footer>
 </body>
 </html>
