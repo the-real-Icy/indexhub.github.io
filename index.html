@@ -7,22 +7,23 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #f2f2f2;
       text-align: center;
     }
 
     header {
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.6);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
     header h1 {
       margin: 0;
       font-size: 3rem;
       letter-spacing: 2px;
+      text-shadow: 0 0 10px #000;
     }
 
     nav {
@@ -32,13 +33,14 @@
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: #00e6e6;
+      color: #ffcc00;
       font-weight: bold;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ffcc00;
+      color: #00e6ff;
+      text-shadow: 0 0 8px #00e6ff;
     }
 
     .content {
@@ -46,53 +48,78 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: #1a1a1a;
       padding: 2rem;
       margin: 1rem auto;
-      border-radius: 10px;
-      max-width: 600px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border-radius: 15px;
+      max-width: 700px;
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
     }
 
     footer {
       padding: 1rem;
-      background: rgba(0,0,0,0.6);
+      background: #111;
       margin-top: 3rem;
       font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🌐 IndexHub</h1>
+    <h1>IndexHub</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#">Scripts</a>
+      <a href="#">Executors</a>
+      <a href="#">Tools</a>
+      <a href="#">Community</a>
     </nav>
   </header>
 
   <div class="content">
     <div class="card">
-      <h2>Welcome to IndexHub 🚀</h2>
-      <p>Your central hub for all things you want to share.  
-      Build, explore, and connect from one place.</p>
+      <h2>🔥 Featured Script</h2>
+      <p>Check out the latest Roblox script added to IndexHub.  
+      Plug it in, test it out, and share your feedback.</p>
+      <a href="#" class="btn">Get Script</a>
     </div>
 
     <div class="card">
-      <h2>⚡ Featured Project</h2>
-      <p>Add your latest project here, with a short description and link.</p>
+      <h2>⚡ Popular Tools</h2>
+      <p>Explore the most used Roblox executors and custom mods from the hub.</p>
+      <a href="#" class="btn">Browse Tools</a>
     </div>
 
     <div class="card">
-      <h2>📬 Get in Touch</h2>
-      <p>Put your email, GitHub, or socials here.</p>
+      <h2>💬 Join the Community</h2>
+      <p>Chat, share, and collab with other Roblox scripters & modders.</p>
+      <a href="#" class="btn">Join Now</a>
     </div>
   </div>
 
   <footer>
-    © 2025 IndexHub — Built with ❤️ on GitHub Pages
+    © 2025 IndexHub — The Roblox Script & Modding Hub
   </footer>
 </body>
 </html>
